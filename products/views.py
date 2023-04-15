@@ -10,14 +10,14 @@ def all_products(request):
     products = Product.objects.all()
     query = None
 
-    if request.Get:
+    if request.GET:
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
                 messages.error(request, 'You didnt enter any search criteria')
                 return redirect(reverse('products'))
 
-            queries = Q(name_icontains=query) | Q(description_icontains=query)
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
     context = {
