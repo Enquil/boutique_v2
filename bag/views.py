@@ -19,7 +19,7 @@ def add_to_bag(request, item_id):
     size = None
 
     if 'product_size' in request.POST:
-        size = request.POST['size']
+        size = request.POST['product_size']
     # Gets the users bag as a dict
     bag = request.session.get('bag', {})
 
