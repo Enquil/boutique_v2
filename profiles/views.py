@@ -5,7 +5,7 @@ def profile(request):
     '''
     Views the Profile
     '''
-    template = 'profiles/profiles.html'
+    template = 'profiles/profile.html'
     context = {}
 
     return render(request, template, context)
